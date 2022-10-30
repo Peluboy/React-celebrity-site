@@ -1,10 +1,8 @@
 import React from 'react'
 import Home from './Home'
 
-const Hompage = () => {
+export const Hompage = () => {
   return (
-      <Home />
+    <Home />
   )
 }
-
-export default Hompage

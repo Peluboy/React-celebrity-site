@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.footerSection{
+    margin-top: auto;
+    display: flex;
+    background-color: #1F1F1F;
+    color: white;
+    width: 98.9vw;
+    justify-content: space-between;
+    padding: 8px 50px;
+    /* position: absolute; */
+    bottom: 0;
+}
+
+.footerSection > p{
+    font-family: poppins;
+    font-size: 13px;
+    padding-top: 12px;
+}
+
+@media (max-width: 500px) {
+    
+    .footerSection {
+      padding: 5px 20px;
+      bottom: 0;
+    }
+  
+    .footerSection > p {
+      font-size: 10px;
+      padding-top: 12px;
+    }
+  }
