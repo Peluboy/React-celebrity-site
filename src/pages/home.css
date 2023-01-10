@@ -29,6 +29,10 @@
     /* margin-bottom: 40px; */
 }
 
+h6 > span{
+    color: red;
+}
+
 .movieSection > h3{
     font-family: 'Poppins';
     font-style: normal;

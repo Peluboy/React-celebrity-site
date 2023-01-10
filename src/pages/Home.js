@@ -70,7 +70,7 @@ const Home = ({ users, setUsers, loading, setLoading }) => {
           <h3>100 Most Popular Movie Stars</h3>
           <h6>
             Discover the Top, Most popular Movies Stars available now! Across
-            theatres, streaming and on-demand
+            theatres, <span>streaming and on-demand</span>
           </h6>
         </div>
 
