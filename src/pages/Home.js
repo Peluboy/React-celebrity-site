@@ -1,4 +1,3 @@
-// import { Navbar } from "../components/navbar/Navbar";
 import { HeroSection } from "../components/heroSection/HeroSection";
 import { useState } from "react";
 import "./home.css";
@@ -7,21 +6,11 @@ import * as ReactBootStrap from "react-bootstrap";
 import { ErrorBoundary } from "react-error-boundary";
 import { Fallback } from "../components/Fallback";
 import Footer from "../components/Footer";
-import { Navbar } from "../components/navbar/Navbar";
-// import Navbar from "../components/navbar/Navbar";
 
-const Home = ({ users, setUsers, loading, setLoading }) => {
-  // const [users, setUsers] = useState([])
-  // const [searchResults, setSearchResults] = useState([]);
-
+const Home = ({ users, setUsers, loading, setLoading, setSearchResults }) => {
   //for pagination purposes
   const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage, setPostsPerPage] = useState(10);
-
-  //for loading purposes
-  // const [loading, setLoading] = useState(false);
-
-  //fetch API routes from randomuser.me using JSON
+  const [postsPerPage, setPostsPerPage] = useState(12);
 
   //for number of users per pageCount
   const lastPostIndex = currentPage * postsPerPage;
@@ -33,9 +22,9 @@ const Home = ({ users, setUsers, loading, setLoading }) => {
     return currentPosts.map((user) => (
       <div className="profiles">
         <img src={user.picture.large} alt="user.login.username" />
-        <h4>{user.login.username.toUpperCase()}</h4>
-        <p>{user.email}</p>
-        <h6>{user.gender.toUpperCase()}</h6>
+        <h4>{user.login.username}</h4>
+        <p>{user.email.toLowerCase()}</p>
+        <h6>{user.gender}</h6>
       </div>
     ));
   };
@@ -50,9 +39,6 @@ const Home = ({ users, setUsers, loading, setLoading }) => {
       {loading ? Home : <ReactBootStrap.Spinner animation="border" />}
 
       <ErrorBoundary FallbackComponent={Fallback} onError={errorHandler}>
-        {/* Navbar component */}
-        <Navbar />
-
         {/* HeroSection component */}
         <HeroSection />
 
@@ -91,12 +77,7 @@ const Home = ({ users, setUsers, loading, setLoading }) => {
         />
       </ErrorBoundary>
 
-      {/* footerSection */}
       <Footer />
-      {/* <div className="footerSection">
-        <p>© 2022 Peluboy. All Right Reserved</p>
-        <img src="./images/altschool.svg" alt="" />
-      </div> */}
     </div>
   );
 };

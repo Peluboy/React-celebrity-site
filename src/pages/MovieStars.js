@@ -4,13 +4,10 @@ import * as ReactBootStrap from "react-bootstrap";
 import { useState } from "react";
 import { Pagination } from "../components/Pagination";
 import Footer from "../components/Footer";
-import { Navbar } from "../components/navbar/Navbar";
-// import Navbar from "../components/navbar/Navbar";
 
-export const MovieStars = ({ users, setUsers, loading, setLoading }) => {
-  // const [searchResults, setSearchResults] = useState([]);
+export const MovieStars = ({ users, loading }) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage, setPostsPerPage] = useState(10);
+  const [postsPerPage, setPostsPerPage] = useState(12);
 
   const lastPostIndex = currentPage * postsPerPage;
   const firstPostIndex = lastPostIndex - postsPerPage;
@@ -29,15 +26,13 @@ export const MovieStars = ({ users, setUsers, loading, setLoading }) => {
 
   return (
     <div className={classes.container}>
-      <Navbar />
       <h4>All Movie Stars</h4>
 
       <div id="user-grid" className={classes.userGrid}>
-        {mapUsers() }
+        {mapUsers()}
 
         {/* Loading state */}
         {loading ? mapUsers : <ReactBootStrap.Spinner animation="border" />}
-        
       </div>
 
       <div className={classes.pagination}>
@@ -49,11 +44,6 @@ export const MovieStars = ({ users, setUsers, loading, setLoading }) => {
         />
       </div>
       <Footer />
-
-      {/* <div className="footerSection">
-        <p>© 2022 Peluboy. All Right Reserved</p>
-        <img src="./images/altschool.svg" alt="" />
-      </div> */}
     </div>
   );
 };
